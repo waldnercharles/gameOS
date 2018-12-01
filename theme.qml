@@ -44,7 +44,7 @@ FocusScope {
       gamegrid.focus = true
       gamegrid.visible = true
       content.opacity = 1
-      backgroundimage.dimopacity = 0.97
+      backgroundimage.dimopacity = 0.9
       gamedetails.active = false
       gamedetails.outro()
     } else {
@@ -53,7 +53,7 @@ FocusScope {
       gamedetails.active = true
       gamegrid.visible = false
       content.opacity = 0
-      backgroundimage.dimopacity = 0
+      backgroundimage.dimopacity = 0.7
       gamedetails.intro()
     }
   }
