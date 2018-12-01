@@ -14,7 +14,7 @@ Item {
   property int padding: vpx(50)
   property int cornerradius: vpx(8)
   property bool showVideo: false
-  property bool boxAvailable: gameData.assets.boxFront
+  property bool boxAvailable: gameData.assets.cartridge
   property int videooffset: vpx(330)
   property int numbuttons: (gameData.assets.videos.length) ? 4 : 3
 
@@ -263,11 +263,11 @@ Item {
         Image {
           id: boxart
           width: vpx(300)
-          source: gameData.assets.boxFront
+          source: gameData.assets.cartridge
           sourceSize { width: vpx(512); height: vpx(512) }
           fillMode: Image.PreserveAspectFit
           asynchronous: true
-          visible: gameData.assets.boxFront || ""
+          visible: gameData.assets.cartridge || ""
           smooth: true
           Behavior on opacity { NumberAnimation { duration: 100 } }
           Behavior on x { NumberAnimation { duration: 100;  easing.type: Easing.InQuad } }
