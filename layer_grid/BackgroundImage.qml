@@ -5,10 +5,10 @@ Item {
   id: root
   property var gameData: api.currentGame
   property var collection: api.currentCollection
-  property real dimopacity: 0.96
+  property real dimopacity: 0.9
 
 
-  property string bgSource: gameData ? gameData.assets.background || gameData.assets.screenshots[0] || "../assets/images/defaultbg.jpg" : ""
+  property string bgSource: gameData ? gameData.assets.screenshots[0] || "../assets/images/defaultbg.jpg" : ""
   property string bgImage1
   property string bgImage2
   property bool firstBG: true
@@ -58,6 +58,18 @@ Item {
         visible: gameData
         asynchronous: true
         source: bgImage2
+        sourceSize { width: 1920; height: 1080 }
+        fillMode: Image.PreserveAspectCrop
+        smooth: false
+    }
+
+    Image {
+        id: scanlines
+        z: parent.z + 1
+        anchors.fill: parent
+        visible: gameData
+        asynchronous: true
+        source: "../assets/images/scanlines-h.png"
         sourceSize { width: 1920; height: 1080 }
         fillMode: Image.PreserveAspectCrop
         smooth: false
